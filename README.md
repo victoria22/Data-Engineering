@@ -10,7 +10,7 @@ From the docker-compose file, the hostname pgadmin will use to connect to Postgr
 Code to run the docker compose file is : `docker-compose up -d`
 
 ## To Dockerize the ingest_data.py 
-Build the dockerfile which has all the dependencies : `docker build -t green_taxi_ingest:v001 . `
+Build the dockerfile which has all the dependencies : `docker build -t green_taxi_ingest:v001 . `  
 Run the code below to ingest the data to postgres db in docker:
 <pre> docker run -it --network week1assignment_week1assignment-network green_taxi_ingest:v001 \
   postgres postgres db 5432 ny_taxi green_taxi_trips "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-10.csv.gz" zones "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/misc/taxi_zone_lookup.csv" </pre>
