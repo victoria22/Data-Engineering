@@ -17,7 +17,7 @@ Run the code below to ingest the data to postgres db in docker:
 
 ## Question 3. Trip Segmentation Count
 ### Up to 1 mile
-1. <pre>SELECT COUNT(trip_distance) AS trip_count
+1. <pre> SELECT COUNT(trip_distance) AS trip_count
     FROM green_taxi_trips
     WHERE trip_distance <= 1
       AND DATE(lpep_pickup_datetime) >= '2019-10-01'
