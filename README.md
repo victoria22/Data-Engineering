@@ -1,7 +1,7 @@
 # Module 1 Homework: Docker & SQL
 
 ## Code to ingest the data from ingest_data.py to postgres database in docker
-<pre> bash // docker run -it --network week1assignment_week1assignment-network green_taxi_ingest:v001 \
+<pre> docker run -it --network week1assignment_week1assignment-network green_taxi_ingest:v001 \
   postgres postgres db 5432 ny_taxi green_taxi_trips "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-10.csv.gz" zones "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/misc/taxi_zone_lookup.csv" </pre>
 
 
