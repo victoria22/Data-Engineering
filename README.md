@@ -10,7 +10,7 @@ Code for running python:3.12.8 image in an interactive mode in docker is:
 `docker run -it --entrypoint /bin/bash python:3.12.8`
 
 ## Question 2
-From the docker-compose file, the hostname pgadmin will use to connect to Postgres database is **db**. This is the service name of the postgres container and will resolve the container's internal IP address within the same network. The port number is 5432. This is because **db** is exposing port 5432 inside the container but is mapped to port 5433 on the host machine. Docker compose uses internal network for container to container communication.  
+From the docker-compose file, the hostname pgadmin will use to connect to Postgres database is **db**. This is the service name of the postgres container and will resolve the container's internal IP address within the same network. The port number is 5432. This is because **db** is exposing port **5432** inside the container but is mapped to port **5433** on the host machine. Docker compose uses internal network for container to container communication.  
 Code to run the docker compose file is : `docker-compose up -d`
 
 ## Question 3. Trip Segmentation Count
