@@ -24,38 +24,38 @@ Run the code below to ingest the data to postgres db in docker:
       AND DATE(lpep_dropoff_datetime) < '2019-11-01'; </pre>
 
 ### In between 1 (exclusive) and 3 miles (inclusive)
-2. SELECT COUNT(trip_distance) AS trip_count
+2. <pre> SELECT COUNT(trip_distance) AS trip_count
    FROM green_taxi_trips
    WHERE trip_distance > 1 
     AND trip_distance <= 3
     AND DATE(lpep_pickup_datetime) >= '2019-10-01'
-    AND DATE(lpep_dropoff_datetime) < '2019-11-01';
+    AND DATE(lpep_dropoff_datetime) < '2019-11-01'; </pre>
 
 ### In between 3 (exclusive) and 7 miles (inclusive)
-3. SELECT COUNT(trip_distance) AS trip_count
+3. <pre> SELECT COUNT(trip_distance) AS trip_count
    FROM green_taxi_trips
    WHERE trip_distance > 3 
     AND trip_distance <= 7
     AND DATE(lpep_pickup_datetime) >= '2019-10-01'
-    AND DATE(lpep_dropoff_datetime) < '2019-11-01';
+    AND DATE(lpep_dropoff_datetime) < '2019-11-01'; </pre>
 
 ### In between 7 (exclusive) and 10 miles (inclusive)
-4. SELECT COUNT(trip_distance) AS trip_count
+4. <pre> SELECT COUNT(trip_distance) AS trip_count
    FROM green_taxi_trips
    WHERE trip_distance > 7 
     AND trip_distance <= 10
     AND DATE(lpep_pickup_datetime) >= '2019-10-01'
-    AND DATE(lpep_dropoff_datetime) < '2019-11-01';
+    AND DATE(lpep_dropoff_datetime) < '2019-11-01'; </pre>
 
 ### Over 10 miles
-5. SELECT COUNT(trip_distance) AS trip_count
+5. <pre> SELECT COUNT(trip_distance) AS trip_count
    FROM green_taxi_trips
    WHERE trip_distance > 10 
     AND DATE(lpep_pickup_datetime) >= '2019-10-01'
-    AND DATE(lpep_dropoff_datetime) < '2019-11-01';
+    AND DATE(lpep_dropoff_datetime) < '2019-11-01'; </pre>
 
 ## Question 4. Longest trip for each day
-SELECT
+<pre> SELECT
     DATE(lpep_pickup_datetime) AS trip_date,
     MAX(trip_distance) AS longest_trip_distance
 FROM
@@ -63,10 +63,10 @@ FROM
 GROUP BY
     DATE(lpep_pickup_datetime)
 ORDER BY
-    longest_trip_distance DESC;
+    longest_trip_distance DESC; </pre>
 
 ## Question 5. Three biggest pickup zones
-SELECT 
+<pre> SELECT 
     SUM(t.total_amount) AS totalAmount, 
     z."Zone" AS Pickup_Locations
 FROM green_taxi_trips t
@@ -74,14 +74,14 @@ INNER JOIN zones z on t."PULocationID" = z."LocationID"
 WHERE DATE(lpep_pickup_datetime) = '2019-10-18'
 GROUP BY Pickup_Locations
 HAVING SUM(t.total_amount) >13000
-ORDER BY totalAmount DESC;
+ORDER BY totalAmount DESC; </pre>
 
 ## Question 6. Largest tip
-SELECT 
+<pre> SELECT 
     MAX(t.tip_amount) AS largest_tip_amount, 
     z."Zone" AS DropOff_Zone
 FROM green_taxi_trips t
 INNER JOIN zones z on t."DOLocationID" = z."LocationID"
 WHERE DATE(lpep_pickup_datetime) = '2019-10-19' AND z."Zone" = 'East Harlem North'
-GROUP BY DropOff_Zone
+GROUP BY DropOff_Zone; </pre>
 
