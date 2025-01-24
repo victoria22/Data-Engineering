@@ -1,10 +1,5 @@
 # Module 1 Homework: Docker & SQL
 
-## Code to ingest the data from ingest_data.py to postgres database in docker
-<pre> docker run -it --network week1assignment_week1assignment-network green_taxi_ingest:v001 \
-  postgres postgres db 5432 ny_taxi green_taxi_trips "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-10.csv.gz" zones "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/misc/taxi_zone_lookup.csv" </pre>
-
-
 ## Question 1
 Code for running python:3.12.8 image in an interactive mode in docker is:
 `docker run -it --entrypoint /bin/bash python:3.12.8`
@@ -13,6 +8,10 @@ To get the version of run: `pip --version`
 ## Question 2
 From the docker-compose file, the hostname pgadmin will use to connect to Postgres database is **db**. This is the service name of the postgres container and will resolve the container's internal IP address within the same network. The port number is 5432. This is because **db** is exposing port **5432** inside the container but is mapped to port **5433** on the host machine. Docker compose uses internal network for container to container communication.  
 Code to run the docker compose file is : `docker-compose up -d`
+
+## Code to ingest the data from ingest_data.py to postgres database in docker
+<pre> docker run -it --network week1assignment_week1assignment-network green_taxi_ingest:v001 \
+  postgres postgres db 5432 ny_taxi green_taxi_trips "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-10.csv.gz" zones "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/misc/taxi_zone_lookup.csv" </pre>
 
 ## Question 3. Trip Segmentation Count
 ### Up to 1 mile
