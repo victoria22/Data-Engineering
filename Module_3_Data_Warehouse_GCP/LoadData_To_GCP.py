@@ -10,8 +10,7 @@ import certifi
 # Declare bucket name
 BUCKET_NAME = "dtc_de_zoomcamp_bucket"
 
-# If you authenticated through the GCP SDK, make sure to initialize the client
-CREDENTIALS_FILE = "./keys/my-creds.json"  # Replace this with your credentials file
+CREDENTIALS_FILE = "./keys/my-creds.json"  
 client = storage.Client.from_service_account_json(CREDENTIALS_FILE)
 
 BASE_URL = "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-"

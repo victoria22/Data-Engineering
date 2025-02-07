@@ -2,7 +2,7 @@ from google.cloud import storage, bigquery
 from google.api_core.exceptions import Conflict
 
 # Path to your Google Cloud credentials file
-CREDENTIALS_FILE = "./keys/my-creds.json"  # Replace this with your credentials file
+CREDENTIALS_FILE = "./keys/my-creds.json"  
 
 # Set the project and bucket name
 PROJECT_ID = "dtc-de-course-448012"  
@@ -18,7 +18,7 @@ def create_bucket(project_id, bucket_name):
         # Create the new bucket
         bucket = client.bucket(bucket_name)
 
-        # Create the bucket in your project with a specified location
+        # Create the bucket in the project with a specified location
         bucket = client.create_bucket(bucket, project=project_id, location="europe-west2")
         
         print(f"Bucket {bucket_name} created successfully in project {project_id}.")

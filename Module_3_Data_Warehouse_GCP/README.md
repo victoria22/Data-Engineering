@@ -21,8 +21,8 @@ SELECT * FROM dezoomcamp32.external_yellow_tripdata; </pre>
 <pre>SELECT COUNT(DISTINCT(PULocationID)) FROM `dezoomcamp32.yellow_tripdata` </pre>  
 
 ## Question 3: Retrieve columns 
-<pre>SELECT  PULocationID,
-             DOLocationID
+<pre>SELECT PULocationID,
+            DOLocationID
 FROM `dezoomcamp32.yellow_tripdata` </pre>
 
 ## Question 4: How many records have fare_amount of 0
