@@ -18,31 +18,22 @@ WITH filtered_trips_data AS (
         AND trip_distance > 0
         AND payment_type_description IN ('Cash', 'Credit card')
 ),
-percentile_buckets AS (
+percentile_calculations AS (
     SELECT
         service_type,
         year,
         month,
         fare_amount,
-        NTILE(100) OVER (PARTITION BY service_type, year, month ORDER BY fare_amount) AS percentile_rank
+        PERCENTILE_CONT(fare_amount, 0.97) OVER (PARTITION BY service_type, year, month) AS p97,
+        PERCENTILE_CONT(fare_amount, 0.95) OVER (PARTITION BY service_type, year, month) AS p95,
+        PERCENTILE_CONT(fare_amount, 0.90) OVER (PARTITION BY service_type, year, month) AS p90
     FROM filtered_trips_data
-),
-percentiles AS (
-    SELECT
-        service_type,
-        year,
-        month,
-        MAX(CASE WHEN percentile_rank <= 97 THEN fare_amount END) AS p97,
-        MAX(CASE WHEN percentile_rank <= 95 THEN fare_amount END) AS p95,
-        MAX(CASE WHEN percentile_rank <= 90 THEN fare_amount END) AS p90
-    FROM percentile_buckets
-    GROUP BY service_type, year, month
 )
-SELECT
+SELECT 
     service_type,
-    year,
-    month,
     p97,
     p95,
     p90
-FROM percentiles
+FROM percentile_calculations
+WHERE year = 2020 AND month = 4
+GROUP BY service_type, p97, p95, p90
