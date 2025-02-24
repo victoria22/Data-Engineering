@@ -12,7 +12,7 @@ WITH filtered_trips_data AS (
         fare_amount,
         trip_distance,
         payment_type_description
-    FROM {{ ref('fact_trips') }}  -- Reference your source table, adjust the name as necessary
+    FROM {{ ref('fact_trips') }} 
     WHERE
         fare_amount > 0
         AND trip_distance > 0
