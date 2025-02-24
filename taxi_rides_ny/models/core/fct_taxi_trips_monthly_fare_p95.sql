@@ -31,9 +31,11 @@ percentile_calculations AS (
 )
 SELECT 
     service_type,
+    year,
+    month,
     p97,
     p95,
     p90
 FROM percentile_calculations
 WHERE year = 2020 AND month = 4
-GROUP BY service_type, p97, p95, p90
+GROUP BY service_type, year, month, p97, p95, p90
