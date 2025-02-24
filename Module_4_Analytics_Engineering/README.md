@@ -52,7 +52,7 @@ ORDER BY
     service_type, quarter; </pre>
 
 ## Question 6: P97/P95/P90 Taxi Monthly Fare
-### The model and continuous percentile has already been built and computed in dbt and stored in bigquery. The model can be found in the ** taxi_rides_ny ** folder
+### The model and continuous percentile has already been built and computed in dbt and stored in bigquery. The model can be found in the taxi_rides_ny folder
 <pre>SELECT
   service_type,
   year,
@@ -63,7 +63,7 @@ ORDER BY
 FROM `dtc-de-course-448012.dbt_vanaeronweke.fct_taxi_trips_monthly_fare_p95` </pre>
 
 ## Question 7: Top #Nth longest P90 travel time Location for FHV
-### The model and continuous p90 of trip_duration has already been built and computed in dbt and stored in bigquery. The model can be found in the ** taxi_rides_ny ** folder
+### The model and continuous p90 of trip_duration has already been built and computed in dbt and stored in bigquery. The model can be found in the taxi_rides_ny folder
 <pre>SELECT 
   pickup_zone,
   dropoff_zone,
