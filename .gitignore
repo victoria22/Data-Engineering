@@ -3,5 +3,8 @@ keys/
 anaconda_projects/db/
 Module_5_Batch_Processing/CourseWork/.ipynb_checkpoints/
 Module_5_Batch_Processing/CourseWork/anaconda_projects/
+Module_5_Batch_Processing/CourseWork/head.csv/
+Module_5_Batch_Processing/CourseWork/taxi_zone_lookup.csv/
+Module_5_Batch_Processing/CourseWork/data/pq/yellow_tripdata_2024-10/
 
 
