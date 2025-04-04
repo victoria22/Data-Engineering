@@ -13,5 +13,5 @@ The processed data will power a Looker Studio dashboard providing business users
 * Profitability insights by product and country
 
 ## Data Pipeline Architecture
-![alt text](image.png)
+![alt text](Pipeline_Architecture_Diagram.png)
 
